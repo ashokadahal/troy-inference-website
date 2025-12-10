@@ -3,61 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Troy Inference Solutions LLC</title>
+    <meta name="description" content="Troy Inference Solutions LLC - High-performance GPU compute and LLM fine-tuning services in Michigan.">
+    <meta name="theme-color" content="#0d1b2a">
+    <title>Troy Inference Solutions LLC | GPU Compute & AI Inference</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; }
-        header { background-color: #0d1b2a; color: white; padding: 40px 20px; text-align: center; }
-        h1 { margin: 0; font-size: 2.5em; letter-spacing: 1px; }
-        .subtitle { color: #4cc9f0; font-size: 1.2em; margin-top: 10px; }
-        .container { max-width: 800px; margin: 40px auto; padding: 20px; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px; }
-        .specs-box { border-left: 5px solid #4cc9f0; background-color: #e0fbfc; padding: 15px; margin: 20px 0; }
-        h2 { color: #0d1b2a; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
-        ul { list-style-type: none; padding: 0; }
-        li { padding: 8px 0; border-bottom: 1px solid #eee; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background-color: #f4f4f9; 
+            color: #2c3e50; 
+            line-height: 1.6;
+        }
+        
+        header { 
+            background: linear-gradient(135deg, #0d1b2a 0%, #1a2f4a 100%); 
+            color: white; 
+            padding: 3rem 1.5rem; 
+            text-align: center; 
+        }
+        h1 { 
+            font-size: clamp(1.8em, 5vw, 2.5em); 
+            letter-spacing: 1px; 
+            margin-bottom: 0.5rem;
+        }
+        .subtitle { 
+            color: #4cc9f0; 
+            font-size: clamp(1em, 3vw, 1.2em); 
+            font-weight: 500;
+        }
+        
+        main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        .container { 
+            background: white; 
+            padding: 2rem; 
+            margin-bottom: 2rem;
+            border-radius: 12px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+        }
+        
+        h2 { 
+            color: #0d1b2a; 
+            font-size: 1.8em;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid #4cc9f0;
+        }
+        h3 { 
+            color: #1a2f4a; 
+            font-size: 1.3em;
+            margin-bottom: 0.75rem;
+        }
+        p { margin-bottom: 1rem; color: #555; }
+        
+        .specs-box { 
+            border-left: 5px solid #4cc9f0; 
+            background-color: #e0fbfc; 
+            padding: 1.5rem; 
+            margin: 1.5rem 0;
+            border-radius: 6px;
+        }
+        
+        ul { 
+            list-style: none; 
+            margin: 1rem 0;
+        }
+        li { 
+            padding: 0.75rem 0 0.75rem 1.5rem;
+            position: relative;
+        }
+        li:before { 
+            content: "▸"; 
+            color: #4cc9f0; 
+            position: absolute; 
+            left: 0;
+            font-weight: bold;
+        }
         li:last-child { border-bottom: none; }
-        .contact { text-align: center; margin-top: 40px; font-size: 0.9em; color: #666; }
-        .footer { text-align: center; padding: 20px; font-size: 0.8em; color: #888; }
+        strong { color: #0d1b2a; font-weight: 600; }
+        
+        .contact { 
+            text-align: center; 
+            background: white;
+            padding: 2rem; 
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        .contact p { margin: 0.5rem 0; }
+        a { color: #4cc9f0; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        
+        .footer { 
+            text-align: center; 
+            padding: 1.5rem; 
+            font-size: 0.9em; 
+            color: #888;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 640px) {
+            h1 { letter-spacing: 0.5px; }
+            .container, .contact { padding: 1.5rem; }
+            h2 { font-size: 1.5em; }
+        }
     </style>
 </head>
 <body>
 
-<header>
+<header role="banner">
     <h1>TROY INFERENCE SOLUTIONS LLC</h1>
-    <div class="subtitle">High-Performance GPU Compute & Model Fine-Tuning</div>
+    <p class="subtitle">High-Performance GPU Compute & Model Fine-Tuning</p>
 </header>
 
-<div class="container">
-    <h2>Our Infrastructure</h2>
-    <p>Based in Troy, Michigan, we provide dedicated, secure GPU compute resources for AI inference, Large Language Model (LLM) fine-tuning, and data processing tasks.</p>
+<main role="main">
+    <section class="container">
+        <h2>Our Infrastructure</h2>
+        <p>Based in Troy, Michigan, we provide dedicated, secure GPU compute resources for AI inference, Large Language Model (LLM) fine-tuning, and data processing tasks.</p>
 
-    <div class="specs-box">
-        <h3>Current Availability: Node-01</h3>
+        <div class="specs-box" role="region" aria-labelledby="node-title">
+            <h3 id="node-title">Current Availability: Node-01</h3>
+            <ul>
+                <li><strong>GPU:</strong> GIGABYTE GeForce RTX 5090 Gaming OC (32GB VRAM)</li>
+                <li><strong>Memory:</strong> 64GB DDR7 System RAM</li>
+                <li><strong>Storage:</strong> 2TB NVMe SSD (7,000 MB/s Read)</li>
+                <li><strong>Connectivity:</strong> High-Speed Fiber Uplink</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Services</h2>
+        <p>We offer bare-metal and containerized rental options compatible with:</p>
         <ul>
-            <li><strong>GPU:</strong> GIGABYTE GeForce RTX 5090 Gaming OC (32GB VRAM)</li>
-            <li><strong>Memory:</strong> 64GB DDR7 System RAM</li>
-            <li><strong>Storage:</strong> 2TB NVMe SSD (7,000 MB/s Read)</li>
-            <li><strong>Connectivity:</strong> High-Speed Fiber Uplink</li>
+            <li>PyTorch & TensorFlow Training</li>
+            <li>LLaMA / Mistral / Falcon Inference</li>
+            <li>Stable Diffusion Image Generation</li>
         </ul>
-    </div>
+    </section>
 
-    <h2>Services</h2>
-    <p>We offer bare-metal and containerized rental options compatible with:</p>
-    <ul>
-        <li>Pytorch & TensorFlow Training</li>
-        <li>LLaMA / Mistral / Falcon Inference</li>
-        <li>Stable Diffusion Image Generation</li>
-    </ul>
-</div>
+    <section class="contact" role="region" aria-labelledby="contact-title">
+        <h2 id="contact-title">Get Started</h2>
+        <p><strong>Contact for Booking & Inquiries:</strong></p>
+        <p><a href="mailto:info@troyinference.com">info@troyinference.com</a></p>
+        <p><em>Registered Michigan Limited Liability Company</em></p>
+    </section>
+</main>
 
-<div class="contact">
-    <p><strong>Contact for Booking & Inquiries:</strong><br>
-    info@troyinference.com</p>
-    <p><em>Registered Michigan Limited Liability Company</em></p>
-</div>
-
-<div class="footer">
+<footer class="footer" role="contentinfo">
     &copy; 2025 Troy Inference Solutions LLC. All Rights Reserved.
-</div>
+</footer>
 
 </body>
 </html>
