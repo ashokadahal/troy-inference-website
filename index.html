@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#0d1b2a">
     <title>Troy Inference Solutions LLC | Private GPU Compute & Model Fine-Tuning</title>
     <style>
+        /* Base Reset & Typography */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { 
@@ -16,6 +17,7 @@
             line-height: 1.6;
         }
         
+        /* Header / Hero Section */
         header { 
             background: linear-gradient(135deg, #0d1b2a 0%, #1a2f4a 100%); 
             color: white; 
@@ -31,9 +33,17 @@
             color: #4cc9f0; 
             font-size: clamp(0.95em, 2.5vw, 1.15em); 
             font-weight: 500;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero-desc {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #e0fbfc;
+            font-style: italic;
+            font-size: 0.95em;
         }
         
+        /* Buttons */
         .cta-buttons {
             display: flex;
             gap: 1rem;
@@ -71,15 +81,19 @@
             transform: translateY(-2px);
         }
         
+        /* Layout */
         main { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-        .container { 
+        section { margin-bottom: 3rem; }
+        
+        /* Cards & Containers */
+        .container, .service-card, .trust-section, .contact { 
             background: white; 
             padding: 2rem; 
-            margin-bottom: 2rem;
             border-radius: 12px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06); 
         }
         
+        /* Headings */
         h2 { 
             color: #0d1b2a; 
             font-size: 1.8em;
@@ -89,26 +103,40 @@
         }
         h3 { 
             color: #1a2f4a; 
-            font-size: 1.3em;
-            margin-bottom: 0.75rem;
+            font-size: 1.5em;
+            margin-bottom: 0.5rem;
         }
-        p { margin-bottom: 1rem; color: #555; }
         
-        .specs-box { 
-            border-left: 5px solid #4cc9f0; 
-            background-color: #e0fbfc; 
-            padding: 1.5rem; 
+        /* Service Grid (The Core Content) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .service-card { border-top: 4px solid #4cc9f0; height: 100%; }
+        .service-hook {
+            color: #007ea7;
+            font-weight: 600;
+            font-size: 1.05em;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        /* Detail Lists */
+        .service-list {
+            background: #f8fafc;
+            padding: 1.25rem;
+            border-radius: 8px;
             margin: 1.5rem 0;
-            border-radius: 6px;
+            border: 1px solid #eef2f6;
         }
-        
-        ul { 
-            list-style: none; 
-            margin: 1rem 0;
-        }
+        .service-list h4 { margin-bottom: 0.75rem; color: #0d1b2a; }
+        ul { list-style: none; }
         li { 
-            padding: 0.75rem 0 0.75rem 1.5rem;
+            padding: 0.4rem 0 0.4rem 1.2rem;
             position: relative;
+            font-size: 0.95em;
+            color: #555;
         }
         li:before { 
             content: "▸"; 
@@ -119,57 +147,19 @@
         }
         strong { color: #0d1b2a; font-weight: 600; }
         
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-top: 4px solid #4cc9f0;
-        }
-        .service-card h3 {
-            font-size: 1.5em;
-            margin-bottom: 0.5rem;
-        }
-        .service-hook {
-            color: #4cc9f0;
-            font-weight: 600;
-            font-size: 1.05em;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-        .service-list {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-        }
-        .service-list li {
-            color: #555;
-            margin-bottom: 0.5rem;
-        }
+        /* Pricing Box */
         .price-tag {
             background: #e0fbfc;
             padding: 1rem;
             border-radius: 8px;
             text-align: center;
             margin: 1.5rem 0;
-            font-weight: 600;
+            font-weight: 700;
             color: #0d1b2a;
+            border: 1px solid #bcebfb;
         }
         
-        .trust-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-bottom: 2rem;
-        }
+        /* Trust Grid */
         .trust-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -182,163 +172,157 @@
             background: #f9f9f9;
             border-radius: 4px;
         }
-        .trust-item h4 {
-            color: #0d1b2a;
-            margin-bottom: 0.5rem;
-            font-size: 1.1em;
+        .trust-item h4 { color: #0d1b2a; margin-bottom: 0.5rem; font-size: 1.1em; }
+        .trust-item p { color: #666; font-size: 0.95em; }
+
+        /* Hardware Specs Box */
+        .specs-box { 
+            border-left: 5px solid #4cc9f0; 
+            background-color: #e0fbfc; 
+            padding: 1.5rem; 
+            margin-top: 1rem;
+            border-radius: 6px;
         }
-        .trust-item p {
-            color: #666;
-            font-size: 0.95em;
-        }
-        
+
+        /* Contact Section */
         .contact { 
             text-align: center; 
             background: linear-gradient(135deg, #e0fbfc 0%, #f0f9ff 100%);
-            padding: 2.5rem; 
-            border-radius: 12px;
-            border: 2px solid #4cc9f0;
-            margin-bottom: 2rem;
+            border: 2px solid #bcebfb;
         }
-        .contact h2 { border: none; padding: 0; }
-        .contact p { margin: 0.75rem 0; }
-        a { color: #4cc9f0; text-decoration: none; font-weight: 500; }
+        .contact h2 { border: none; padding: 0; margin-bottom: 0.5rem; }
+        a { color: #007ea7; text-decoration: none; font-weight: 500; }
         a:hover { text-decoration: underline; }
         
+        /* Footer */
         .footer { 
             text-align: center; 
-            padding: 2rem 1rem; 
+            padding: 3rem 1rem; 
             font-size: 0.9em; 
-            color: #888;
-            border-top: 1px solid #eee;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
             background: white;
+            margin-top: 2rem;
         }
         .footer-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.95em;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            text-align: left;
         }
-        
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             h1 { letter-spacing: 0.5px; }
+            .services-grid, .trust-grid, .footer-info { grid-template-columns: 1fr; }
             .container { padding: 1.5rem; }
-            h2 { font-size: 1.5em; }
-            .services-grid { grid-template-columns: 1fr; }
-            .trust-grid { grid-template-columns: 1fr; }
-            .cta-buttons { gap: 0.75rem; }
-            .btn { padding: 0.75rem 1.5rem; font-size: 0.95em; }
-            .footer-info { grid-template-columns: 1fr; }
+            .footer-info { text-align: center; gap: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
 <header role="banner">
-    <h1>TROY INFERENCE SOLUTIONS LLC</h1>
+    <h1>TROY INFERENCE SOLUTIONS</h1>
     <p class="subtitle">Private AI Compute & Custom Model Fine-Tuning</p>
-    <p class="subtitle" style="font-style: italic; color: #e0fbfc; margin-bottom: 1rem;">Secure, US-based GPU inference and training on the industry-leading RTX 5090 (32GB). Managed by Data Scientists, not just admins.</p>
+    <p class="hero-desc">Secure, US-based GPU infrastructure. Powered by the RTX 5090 (32GB). Managed by active Data Scientists, not just admins.</p>
     <div class="cta-buttons">
-        <a href="#bare-metal" class="btn btn-primary">Rent Dedicated Compute</a>
+        <a href="#bare-metal" class="btn btn-primary">Rent Dedicated GPU</a>
         <a href="#fine-tuning" class="btn btn-secondary">Inquire About Fine-Tuning</a>
     </div>
 </header>
 
 <main role="main">
+    
     <section class="services-grid">
         <div class="service-card" id="bare-metal">
-            <h3>Dedicated Bare Metal Rental</h3>
-            <p class="service-hook">"Stop fighting for shared instances. Get a dedicated node all to yourself."</p>
+            <h3>Dedicated Bare Metal</h3>
+            <p class="service-hook">"Stop fighting for shared instances. Get a dedicated 32GB node all to yourself."</p>
             
-            <p><strong>Perfect for:</strong> Developers and ML engineers who know what they're doing.</p>
+            <p><strong>Perfect for:</strong> Developers, Students, and ML Engineers needing raw power.</p>
             
             <div class="service-list">
-                <h4 style="color: #0d1b2a; margin-bottom: 1rem;">Node Specifications</h4>
+                <h4>Node Specifications</h4>
                 <ul>
-                    <li><strong>GPU:</strong> NVIDIA GeForce RTX 5090 (32GB GDDR7 VRAM)</li>
-                    <li><strong>Performance:</strong> 3,300+ AI TOPS (Int8)</li>
-                    <li><strong>Memory Bandwidth:</strong> 1TB/s+</li>
-                    <li><strong>System RAM:</strong> 64GB DDR7</li>
-                    <li><strong>Storage:</strong> 2TB NVMe SSD (7,000 MB/s)</li>
-                    <li><strong>Connectivity:</strong> High-Speed Fiber Uplink</li>
+                    <li><strong>GPU:</strong> NVIDIA GeForce RTX 5090 </li>
+                    <li><strong>VRAM:</strong> 32GB GDDR7 (Crucial for 70B+ Models)</li>
+                    <li><strong>Performance:</strong> 3,300+ AI TOPS</li>
+                    <li><strong>Bandwidth:</strong> High-Speed Fiber Uplink</li>
+                    <li><strong>Storage:</strong> 2TB NVMe Gen5 SSD</li>
                 </ul>
             </div>
             
             <div class="service-list">
-                <h4 style="color: #0d1b2a; margin-bottom: 1rem;">Pre-Configured For</h4>
+                <h4>Ready For</h4>
                 <ul>
                     <li>PyTorch & TensorFlow Training</li>
-                    <li>LLaMA / Mistral / Falcon / Qwen Inference</li>
-                    <li>70B-parameter model inference (70GB+ context)</li>
-                    <li>Stable Diffusion image generation</li>
-                    <li>Custom CUDA workloads</li>
+                    <li>LLaMA-3 / Mistral / Qwen Inference</li>
+                    <li>Stable Diffusion XL Generation</li>
                 </ul>
             </div>
             
             <div class="price-tag">$0.60 – $0.80 / hour</div>
             
-            <p style="background: #e0fbfc; padding: 1rem; border-radius: 6px; color: #0d1b2a; font-weight: 500;">
-                <strong>Privacy Promise:</strong> Single-tenant. No logging. Your model weights stay yours. Complete data isolation.
+            <p style="font-size: 0.9em; color: #666; text-align: center;">
+                <em>Instant Docker Deployment via Vast.ai / RunPod</em>
             </p>
         </div>
         
         <div class="service-card" id="fine-tuning">
             <h3>Custom LLM Fine-Tuning</h3>
-            <p class="service-hook">"Turn your messy company data into a smart, private AI assistant."</p>
+            <p class="service-hook">"Turn your messy company PDFs into a smart, private AI assistant."</p>
             
-            <p><strong>Perfect for:</strong> Businesses with proprietary data but limited ML engineering resources.</p>
+            <p><strong>Perfect for:</strong> Local Businesses, Legal, & Manufacturing.</p>
             
             <div class="service-list">
-                <h4 style="color: #0d1b2a; margin-bottom: 1rem;">We Handle</h4>
+                <h4>We Handle Everything</h4>
                 <ul>
-                    <li><strong>Data Prep:</strong> Clean & format PDFs, emails, docs for training</li>
-                    <li><strong>Training:</strong> LoRA / QLoRA fine-tuning on your chosen model</li>
-                    <li><strong>Model Selection:</strong> Llama-3, Mistral, Qwen, or Falcon</li>
-                    <li><strong>Delivery:</strong> Hand you `.gguf` or `.safetensors` files to run offline</li>
-                    <li><strong>Support:</strong> Direct access to data scientist for optimization</li>
+                    <li><strong>Data Prep:</strong> Cleaning PDFs, Manuals, & Contracts</li>
+                    <li><strong>Training:</strong> LoRA / QLoRA Fine-Tuning (Unsloth)</li>
+                    <li><strong>Model Selection:</strong> Llama-3, Mistral, or Falcon</li>
+                    <li><strong>Privacy:</strong> Zero data leakage. 100% Offline capable.</li>
                 </ul>
             </div>
             
             <div class="service-list">
-                <h4 style="color: #0d1b2a; margin-bottom: 1rem;">Use Cases</h4>
+                <h4>Use Cases</h4>
                 <ul>
-                    <li>Legal contract analysis & review</li>
-                    <li>Medical coding & clinical documentation</li>
-                    <li>Internal HR & employee onboarding bots</li>
-                    <li>Custom documentation Q&A systems</li>
-                    <li>Domain-specific chatbots</li>
+                    <li>Auto-Part Spec Lookup Bots</li>
+                    <li>Michigan Zoning Code Q&A</li>
+                    <li>Internal HR & Onboarding Assistants</li>
                 </ul>
             </div>
             
-            <div class="price-tag">Custom Quote (Contact us for details)</div>
+            <div class="price-tag">Custom Quote</div>
             
-            <p style="background: #e0fbfc; padding: 1rem; border-radius: 6px; color: #0d1b2a; font-weight: 500;">
-                <strong>Data Guarantee:</strong> Your training data is never retained. Models are yours alone.
+            <p style="font-size: 0.9em; color: #666; text-align: center;">
+                <em>Includes consultation with Lead Data Scientist.</em>
             </p>
         </div>
     </section>
 
     <section class="trust-section">
         <h2>Why Troy Inference?</h2>
-        <p>We don't compete on scale. We compete on <strong>expertise, privacy, and personal relationships</strong>.</p>
+        <p>We don't compete on scale. We compete on <strong>expertise, privacy, and sovereignty</strong>.</p>
         
         <div class="trust-grid">
             <div class="trust-item">
                 <h4>🇺🇸 US-Based Sovereignty</h4>
-                <p>Physically located in Troy, Michigan. Your data never leaves the United States. Perfect for ITAR, GDPR, and HIPAA-conscious workflows.</p>
+                <p>Physically located in Troy, Michigan. Your data never leaves the United States. Ideal for sensitive workflows.</p>
             </div>
             <div class="trust-item">
                 <h4>💾 The 32GB Advantage</h4>
-                <p>Most rental cards max out at 24GB. Our RTX 5090 with 32GB allows larger batch sizes and 70B-parameter model inference that competitors can't handle.</p>
+                <p>Most rentals offer 24GB. Our 32GB RTX 5090 enables larger batch sizes and 70B-parameter model inference that others can't handle.</p>
             </div>
             <div class="trust-item">
                 <h4>🧑‍🔬 Scientist-Led</h4>
-                <p>We aren't just a server farm. We're led by active data science practitioners who understand gradient accumulation, learning rate scheduling, and model optimization.</p>
+                <p>Led by active Data Science practitioners. We understand gradient accumulation, learning rates, and quantization because we do it daily.</p>
             </div>
             <div class="trust-item">
-                <h4>🔒 Zero Logging Policy</h4>
-                <p>Single-tenant nodes. No shared resources. No monitoring dashboards. Your model weights, datasets, and prompts remain completely private.</p>
+                <h4>🔒 Zero Logging</h4>
+                <p>Single-tenant nodes. No shared resources. Your model weights and datasets remain completely isolated.</p>
             </div>
         </div>
     </section>
@@ -347,28 +331,33 @@
         <h2>Infrastructure Specs</h2>
         <p>Current Availability: <strong>Node-01</strong> (RTX 5090 Premium Inference Node)</p>
         
-        <div class="specs-box" role="region" aria-labelledby="node-title">
-            <h3 id="node-title">Hardware Configuration</h3>
+        <div class="specs-box">
+            <h3>Hardware Configuration</h3>
             <ul>
-                <li><strong>GPU:</strong> GIGABYTE GeForce RTX 5090 Gaming OC (32GB GDDR7 VRAM)</li>
-                <li><strong>CPU:</strong> High-core-count processor optimized for GPU workloads</li>
-                <li><strong>System Memory:</strong> 64GB DDR7 System RAM</li>
-                <li><strong>Storage:</strong> 2TB NVMe SSD (7,000 MB/s sequential read)</li>
-                <li><strong>Connectivity:</strong> High-Speed Fiber Uplink (dedicated bandwidth)</li>
-                <li><strong>Environment:</strong> Ubuntu Linux 22.04 LTS + Docker + PyTorch (pre-configured)</li>
+                <li><strong>GPU:</strong> GIGABYTE GeForce RTX 5090 Gaming OC</li>
+                <li><strong>Architecture:</strong> Blackwell (Consumer Flagship)</li>
+                <li><strong>Memory:</strong> 32GB GDDR7</li>
+                <li><strong>System RAM:</strong> 64GB DDR5</li>
+                <li><strong>Connectivity:</strong> 500Mbps+ Symmetric Fiber (AT&T)</li>
+                <li><strong>Environment:</strong> Ubuntu 22.04 LTS + Docker + PyTorch 2.4</li>
             </ul>
         </div>
     </section>
 
-    <section class="contact" role="region" aria-labelledby="contact-title">
-        <h2 id="contact-title">Get Started Today</h2>
-        <p style="font-size: 1.05em; color: #0d1b2a;">Ready to scale your AI workloads with confidence?</p>
-        <p style="margin-top: 1.5rem; font-size: 1.1em;"><strong>Email us:</strong> <a href="mailto:inference@troyinference.com" style="color: #0d1b2a; font-weight: 700;">inference@troyinference.com</a></p>
-        <p style="margin-top: 1rem; color: #666;">For rental bookings, fine-tuning inquiries, or custom GPU workload optimization.</p>
+    <section class="contact" id="contact">
+        <h2>Get Started Today</h2>
+        <p>Ready to scale your AI workloads with confidence?</p>
+        <p style="margin-top: 1.5rem; font-size: 1.2em;">
+            <strong>Email:</strong> <a href="mailto:inference@troyinference.com">inference@troyinference.com</a>
+        </p>
+        <p style="margin-top: 1rem; color: #666; font-size: 0.9em;">
+            For rental bookings, fine-tuning inquiries, or custom GPU workload optimization.
+        </p>
     </section>
+
 </main>
 
-<footer class="footer" role="contentinfo">
+<footer class="footer">
     <div class="footer-info">
         <div>
             <strong>Troy Inference Solutions LLC</strong><br>
@@ -377,8 +366,8 @@
         </div>
         <div>
             <strong>Status:</strong><br>
-            Registered Michigan Limited Liability Company<br>
-            <em>Coming Soon: RTX 5090 Dedicated Nodes</em>
+            Registered Michigan LLC<br>
+            <em>RTX 5090 Node Online</em>
         </div>
     </div>
     &copy; 2025 Troy Inference Solutions LLC. All Rights Reserved.
