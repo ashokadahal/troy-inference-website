@@ -3,369 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fractional AI Leadership, Technical Due Diligence, and Private Model Fine-Tuning. Troy, MI based.">
-    <meta name="theme-color" content="#0d1b2a">
-    <title>Troy Inference Solutions | AI Strategy & Private Compute</title>
+    <meta name="description" content="Fractional AI Leadership & Cloud Infrastructure Strategy. We optimize LLM costs and scalability. Troy, MI.">
+    <meta name="theme-color" content="#0f172a">
+    <title>Troy Inference Solutions | AI Strategy & Cloud Orchestration</title>
     <style>
-        /* Base Reset & Typography */
+        /* Modern, Clean, "Enterprise" Aesthetic */
+        :root {
+            --primary: #3b82f6; /* Enterprise Blue */
+            --dark: #0f172a;    /* Slate Dark */
+            --light: #f8fafc;   /* Slate Light */
+            --accent: #0ea5e9;  /* Sky Blue */
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-            background-color: #f4f4f9; 
-            color: #2c3e50; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif; 
+            background-color: var(--light); 
+            color: #334155; 
             line-height: 1.6;
         }
         
-        /* Header / Hero Section */
+        /* HEADER */
         header { 
-            background: linear-gradient(135deg, #0d1b2a 0%, #1a2f4a 100%); 
+            background: linear-gradient(180deg, var(--dark) 0%, #1e293b 100%); 
             color: white; 
             padding: 5rem 1.5rem 4rem; 
             text-align: center; 
         }
         h1 { 
-            font-size: clamp(2em, 5vw, 3em); 
-            letter-spacing: 1px; 
-            margin-bottom: 0.75rem;
+            font-size: clamp(2.2em, 5vw, 3.5em); 
+            letter-spacing: -1px; 
+            margin-bottom: 1rem;
             font-weight: 800;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .subtitle { 
-            color: #4cc9f0; 
-            font-size: clamp(1.1em, 2.5vw, 1.4em); 
-            font-weight: 500;
-            margin-bottom: 1rem;
+            color: var(--accent); 
+            font-size: clamp(1.1em, 2.5vw, 1.3em); 
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 2px;
         }
         .hero-desc {
             max-width: 700px;
             margin: 0 auto 2.5rem;
-            color: #e0fbfc;
-            font-size: 1.1em;
+            color: #cbd5e1;
+            font-size: 1.15em;
             line-height: 1.8;
         }
         
-        /* Buttons */
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        /* BUTTONS */
         .btn {
             padding: 1rem 2rem;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 1em;
             text-decoration: none;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
             display: inline-block;
+            margin: 0.5rem;
         }
         .btn-primary {
-            background: #4cc9f0;
-            color: #0d1b2a;
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
         }
         .btn-primary:hover {
-            background: #00b4d8;
+            background: #2563eb;
             transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0, 180, 216, 0.3);
         }
         .btn-secondary {
-            background: transparent;
-            color: #4cc9f0;
-            border: 2px solid #4cc9f0;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
         }
         .btn-secondary:hover {
-            background: #4cc9f0;
-            color: #0d1b2a;
-            transform: translateY(-2px);
+            background: rgba(255,255,255,0.2);
         }
-        
-        /* Layout */
-        main { max-width: 1100px; margin: 3rem auto; padding: 0 1.5rem; }
-        section { margin-bottom: 4rem; }
-        
-        /* Cards & Containers */
-        .container, .service-card, .trust-section, .contact { 
-            background: white; 
-            padding: 2.5rem; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06); 
-        }
-        
-        /* Headings */
+
+        /* LAYOUT */
+        main { max-width: 1200px; margin: 0 auto; padding: 4rem 1.5rem; }
+        section { margin-bottom: 6rem; }
         h2 { 
-            color: #0d1b2a; 
-            font-size: 2em;
-            margin-bottom: 1.5rem; 
-            padding-bottom: 0.75rem;
-            border-bottom: 3px solid #4cc9f0;
+            font-size: 2em; 
+            color: var(--dark); 
+            margin-bottom: 2rem; 
+            font-weight: 700;
+            position: relative;
             display: inline-block;
         }
-        h3 { 
-            color: #1a2f4a; 
-            font-size: 1.4em;
-            margin-bottom: 0.75rem;
-        }
-        
-        /* Strategic Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .service-card { 
-            border-top: 5px solid #4cc9f0; 
-            height: 100%; 
-            display: flex;
-            flex-direction: column;
-        }
-        .card-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        h2::after {
+            content: '';
             display: block;
-        }
-        .service-desc {
-            color: #555;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin-top: 0.5rem;
+            border-radius: 2px;
         }
 
-        /* Detail Lists */
-        .service-list {
-            background: #f8fafc;
-            padding: 1.25rem;
-            border-radius: 8px;
-            margin-top: auto;
-            border: 1px solid #eef2f6;
+        /* GRID SYSTEM */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
-        .service-list h4 { font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 0.5rem; }
-        ul { list-style: none; }
-        li { 
-            padding: 0.3rem 0 0.3rem 1.2rem;
+
+        /* CARDS */
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .icon { font-size: 2.5rem; margin-bottom: 1.5rem; display: block; }
+        .card h3 { font-size: 1.5em; margin-bottom: 1rem; color: var(--dark); }
+        .card p { color: #64748b; margin-bottom: 1.5rem; }
+        
+        /* FEATURE LIST */
+        ul.feature-list { list-style: none; }
+        ul.feature-list li { 
+            margin-bottom: 0.75rem; 
+            padding-left: 1.5rem; 
             position: relative;
-            font-size: 0.95em;
-            color: #334155;
+            color: #475569;
         }
-        li:before { 
-            content: "✓"; 
-            color: #4cc9f0; 
-            position: absolute; 
+        ul.feature-list li::before {
+            content: "→";
+            position: absolute;
             left: 0;
+            color: var(--primary);
             font-weight: bold;
         }
-        
-        /* Infrastructure Box */
-        .infra-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-        .specs-box { 
-            border-left: 5px solid #4cc9f0; 
-            background-color: #0d1b2a; 
-            color: white;
-            padding: 2rem; 
-            border-radius: 6px;
-        }
-        .specs-box h3 { color: white; border-bottom: 1px solid #4cc9f0; padding-bottom: 0.5rem; margin-bottom: 1rem; }
-        .specs-box li { color: #e0fbfc; }
 
-        /* Contact Section */
-        .contact { 
-            text-align: center; 
-            background: linear-gradient(135deg, #e0fbfc 0%, #f0f9ff 100%);
-            border: 2px solid #bcebfb;
+        /* TECH STACK SECTION */
+        .tech-stack {
+            background: var(--dark);
+            color: white;
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
         }
-        .contact h2 { border: none; padding: 0; margin-bottom: 1rem; }
-        .email-link { 
-            font-size: 1.5em; 
-            color: #007ea7; 
-            text-decoration: none; 
-            font-weight: 700; 
+        .tech-stack h2 { color: white; }
+        .tech-logos {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            font-weight: 600;
+            color: #94a3b8;
         }
-        .email-link:hover { text-decoration: underline; }
+        .tech-item { 
+            background: rgba(255,255,255,0.05); 
+            padding: 1rem 1.5rem; 
+            border-radius: 8px; 
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* CONTACT */
+        .contact-box {
+            text-align: center;
+            background: #eff6ff;
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            border: 1px solid #dbeafe;
+        }
+        .email {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
         
-        /* Footer */
-        .footer { 
-            text-align: center; 
-            padding: 3rem 1rem; 
-            font-size: 0.9em; 
-            color: #64748b;
+        /* FOOTER */
+        footer {
             border-top: 1px solid #e2e8f0;
-            background: white;
-            margin-top: 4rem;
+            padding: 3rem;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9em;
         }
 
         @media (max-width: 768px) {
-            .infra-grid { grid-template-columns: 1fr; }
-            .container { padding: 1.5rem; }
+            h1 { font-size: 2.5em; }
+            .grid-3 { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<header role="banner">
-    <h1>TROY INFERENCE SOLUTIONS</h1>
-    <p class="subtitle">Fractional AI Leadership & Strategic Intelligence</p>
-    <p class="hero-desc">
-        We bridge the gap between "Corporate Strategy" and "Technical Reality."
-        <br>
-        Led by active Data Science practitioners in Troy, Michigan.
-    </p>
-    <div class="cta-buttons">
-        <a href="#consulting" class="btn btn-primary">Strategic Consulting</a>
-        <a href="#lab" class="btn btn-secondary">Our Infrastructure</a>
+<header>
+    <div style="max-width: 1000px; margin: 0 auto;">
+        <h1>TROY INFERENCE SOLUTIONS</h1>
+        <p class="subtitle">Cloud AI Orchestration & Strategy</p>
+        <p class="hero-desc">
+            Stop overpaying for GPU compute. We design scalable, cost-optimized AI pipelines using hybrid cloud architecture. 
+            Led by Principal Data Scientists in Michigan.
+        </p>
+        <div>
+            <a href="#services" class="btn btn-primary">Strategic Consulting</a>
+            <a href="#stack" class="btn btn-secondary">Our Tech Stack</a>
+        </div>
     </div>
 </header>
 
-<main role="main">
-    
-    <section id="consulting">
-        <h2>Strategic Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <span class="card-icon">♟️</span>
-                <h3>Fractional AI Leadership</h3>
-                <p class="service-desc">
-                    For mid-market firms that need a Chief AI Officer's strategy without the full-time headcount. We audit vendors, set roadmaps, and prevent costly "AI Wrapper" mistakes.
-                </p>
-                <div class="service-list">
-                    <h4>Deliverables</h4>
-                    <ul>
-                        <li>Vendor contract vetting (Databricks/OpenAI)</li>
-                        <li>Hiring & Team structure advisement</li>
-                        <li>"Buy vs. Build" architecture strategy</li>
-                    </ul>
-                </div>
-            </div>
+<main>
 
-            <div class="service-card">
-                <span class="card-icon">🔍</span>
-                <h3>Technical Due Diligence</h3>
-                <p class="service-desc">
-                    For VC/PE firms and Investors. We look under the hood of AI startups to verify if their technology is proprietary or just a wrapper.
-                </p>
-                <div class="service-list">
-                    <h4>Deliverables</h4>
-                    <ul>
-                        <li>Codebase & Architecture Audit</li>
-                        <li>Scalability Stress-Testing</li>
-                        <li>IP & Data Moat Assessment</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <span class="card-icon">🔒</span>
-                <h3>Private Local Intelligence</h3>
-                <p class="service-desc">
-                    Deploy secure, offline-capable AI (RAG) for Manufacturing, Legal, and Automotive clients. Your IP never leaves your building.
-                </p>
-                <div class="service-list">
-                    <h4>Deliverables</h4>
-                    <ul>
-                        <li>Private Llama-3 / Mistral Fine-Tuning</li>
-                        <li>Secure PDF/Doc Scraping & Indexing</li>
-                        <li>Zero-Data-Leakage Guarantee</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="data">
-        <h2>Data & Content Operations</h2>
-        <div class="container">
-            <div class="infra-grid">
-                <div>
-                    <h3>Synthetic Data Generation</h3>
-                    <p style="margin-bottom: 1rem;">
-                        Real-world data is messy and privacy-restricted. We use our in-house compute cluster to generate massive, high-fidelity synthetic datasets for training and validation.
-                    </p>
-                    <div class="service-list">
-                        <h4>Capabilities</h4>
-                        <ul>
-                            <li>Generate 100k+ Q&A pairs for Fine-Tuning</li>
-                            <li>Scenario Simulation for Edge Cases</li>
-                            <li>Programmatic Technical Content Generation</li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <h3>Programmatic Technical SEO</h3>
-                    <p style="margin-bottom: 1rem;">
-                        We build high-traffic assets targeting specific technical error logs and edge cases. Our "Answer Engine" technology drives qualified developer traffic.
-                    </p>
-                    <div class="service-list">
-                        <h4>Capabilities</h4>
-                        <ul>
-                            <li>Error-Log Resolution Databases</li>
-                            <li>Automated Documentation Enrichment</li>
-                            <li>Niche Technical Traffic Acquisition</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="lab" class="trust-section">
-        <h2>The Troy Inference Lab</h2>
-        <p style="margin-bottom: 2rem;">
-            Unlike generalist consultants who only use PowerPoints, we maintain our own <strong>internal compute cluster</strong>. 
-            We use this hardware to validate client theories, test open-source models, and generate synthetic data.
-        </p>
-        
-        <div class="infra-grid">
-            <div class="specs-box">
-                <h3>Primary Compute Node</h3>
-                <ul>
-                    <li><strong>GPU:</strong> NVIDIA RTX 5090 (Blackwell)</li>
-                    <li><strong>Memory:</strong> 32GB GDDR7 VRAM</li>
-                    <li><strong>Capacity:</strong> 70B+ Parameter Model Inference</li>
-                    <li><strong>Storage:</strong> 2TB Gen5 NVMe (Data Lake)</li>
-                    <li><strong>Network:</strong> Gigabit Symmetric Fiber</li>
+    <section id="services">
+        <h2>Consulting Services</h2>
+        <div class="grid-3">
+            <div class="card">
+                <span class="icon">📉</span>
+                <h3>AI Cost Optimization</h3>
+                <p>Most companies overpay for AWS/Azure inference by 40-60%. We audit your workload and migrate you to optimized, cost-effective compute.</p>
+                <ul class="feature-list">
+                    <li>Migrate from GPT-4 to Llama-3 (Self-Hosted)</li>
+                    <li>Spot Instance Orchestration</li>
+                    <li>Latency vs. Cost Analysis</li>
                 </ul>
             </div>
-            <div style="padding: 1rem;">
-                <h3>Why this matters for you</h3>
-                <p style="margin-bottom: 1rem;">
-                    <strong>We don't guess. We test.</strong>
-                </p>
-                <p>
-                    When a vendor tells you their model is "cost-effective," we pull it onto our bare metal and run the benchmarks ourselves. 
-                    Our lab allows us to simulate your workload offline before you sign a 6-figure cloud contract.
-                </p>
+
+            <div class="card">
+                <span class="icon">🧠</span>
+                <h3>Fractional AI Leadership</h3>
+                <p>For mid-market firms needing a Chief AI Officer's strategy without the headcount. We prevent "AI Wrapper" mistakes and vet vendors.</p>
+                <ul class="feature-list">
+                    <li>Vendor Contract Negotiation</li>
+                    <li>"Buy vs Build" Strategy</li>
+                    <li>Hiring & Team Structure</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <span class="icon">🏗️</span>
+                <h3>Custom Pipeline Architecture</h3>
+                <p>We build robust RAG (Retrieval Augmented Generation) pipelines that scale elastically. Dev locally, deploy globally.</p>
+                <ul class="feature-list">
+                    <li>Hybrid Cloud Setup (SkyPilot)</li>
+                    <li>Secure Private RAG</li>
+                    <li>Automated Evaluation Pipelines</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <h2>Engage Our Leadership</h2>
-        <p>Availability is limited for fractional engagements.</p>
-        <div style="margin: 2rem 0;">
-            <a href="mailto:consulting@troyinference.com" class="email-link">consulting@troyinference.com</a>
-        </div>
-        <p style="color: #666; font-size: 0.9em;">
-            Troy, Michigan, USA • Licensed & Insured LLC
-        </p>
-    </section>
-
-</main>
-
-<footer class="footer">
-    <div style="max-width: 600px; margin: 0 auto;">
-        <p><strong>Troy Inference Solutions LLC</strong></p>
-        <p>Specialized AI Strategy & Private Infrastructure</p>
-        <br>
-        <p>&copy; 2025 Troy Inference Solutions LLC. All Rights Reserved.</p>
-    </div>
-</footer>
-
-</body>
-</html>
+    <section id="stack" class
